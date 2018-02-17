@@ -11,32 +11,14 @@
 
 #include <boost/program_options.hpp>
 
+#include <boost/asio.hpp>
+
 class CMapInfo;
 
 class CConnection;
 struct CPackForSelectionScreen;
 class CGameHandler;
 struct SharedMemory;
-
-namespace boost
-{
-	namespace asio
-	{
-		namespace ip
-		{
-			class tcp;
-		}
-		class io_service;
-
-		template <typename Protocol> class stream_socket_service;
-		template <typename Protocol,typename StreamSocketService>
-		class basic_stream_socket;
-
-		template <typename Protocol> class socket_acceptor_service;
-		template <typename Protocol,typename SocketAcceptorService>
-		class basic_socket_acceptor;
-	}
-};
 
 typedef boost::asio::basic_socket_acceptor<boost::asio::ip::tcp, boost::asio::socket_acceptor_service<boost::asio::ip::tcp> > TAcceptor;
 typedef boost::asio::basic_stream_socket < boost::asio::ip::tcp , boost::asio::stream_socket_service<boost::asio::ip::tcp>  > TSocket;
