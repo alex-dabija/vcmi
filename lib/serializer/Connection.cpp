@@ -14,7 +14,6 @@
 #include "../mapping/CMap.h"
 #include "../CGameState.h"
 
-#include <boost/asio.hpp>
 
 using namespace boost;
 using namespace boost::asio::ip;
