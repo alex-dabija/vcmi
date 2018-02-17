@@ -16,6 +16,9 @@
 
 struct CPack;
 
+typedef boost::asio::basic_stream_socket < boost::asio::ip::tcp , boost::asio::stream_socket_service<boost::asio::ip::tcp>  > TSocket;
+typedef boost::asio::basic_socket_acceptor<boost::asio::ip::tcp, boost::asio::socket_acceptor_service<boost::asio::ip::tcp> > TAcceptor;
+
 /// Main class for network communication
 /// Allows establishing connection and bidirectional read-write
 class DLL_LINKAGE CConnection
